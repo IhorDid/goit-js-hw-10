@@ -5,6 +5,11 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: Montserrat, sans-serif;
+  font-size: 16px;
+}
+
 h1,
 h2,
 h3,
@@ -102,4 +107,82 @@ img {
   font-size: 16px;
   font-weight: 400;
   text-transform: uppercase;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 360px;
+  gap: 16px;
+}
+
+.form > :first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-delay {
+  height: 40px;
+  padding: 8px 0 8px 16px;
+  border-radius: 4px;
+  border: 1px solid rgba(128, 128, 128, 0.6);
+}
+fieldset {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  height: 64px;
+  padding-top: 30px;
+  border-radius: 4px;
+  border: 1px solid rgba(128, 128, 128, 0.6);
+}
+legend {
+  position: absolute;
+  margin-left: 28px;
+  top: -12px;
+  left: 0;
+  background-color: #fff;
+  width: 45px;
+  padding-left: 5px;
+}
+
+.btn-create {
+  height: 40px;
+  padding: 8px 16px 8px 16px;
+  font-weight: 500;
+  color: rgb(255, 255, 255);
+  border-radius: 8px;
+  background: rgb(78, 117, 255);
+  border: none;
+  font-family: Montserrat, sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.06em;
+  margin-top: 16px;
+}
+
+.btn-create:hover {
+  background: rgb(108, 140, 255);
+}
+
+input[type='radio'] {
+  display: inline-block;
+  width: 20px;
+  height: 16px;
+  border: 1px;
+
+  border-color: black;
+  border-radius: 50%;
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+input[type='radio']:checked + label {
+  background-color: rgb(45, 19, 241);
+}
+
+.input-delay:hover,
+fieldset:hover {
+  border: 1px solid rgb(0, 0, 0);
 }
