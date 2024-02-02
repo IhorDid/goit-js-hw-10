@@ -1,4 +1,10 @@
 /* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 h1,
 h2,
 h3,
@@ -37,9 +43,42 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+#datetime-picker {
+  margin-bottom: 32px;
+  width: 272px;
+  height: 40px;
+  border: 1px solid rgb(128, 128, 128);
+  border-radius: 4px;
+  padding: 8px 0px 8px 16px;
+  color: rgb(46, 47, 66);
+  font-family: Montserrat, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
 .timer {
   display: flex;
   gap: 27px;
+}
+
+.btn-timer {
+  border-radius: 8px;
+  background: rgb(207, 207, 207);
+  width: 75px;
+  height: 40px;
+  padding: 8px 16px 8px 16px;
+  border: none;
+}
+
+.btn-timer:enabled {
+  background: rgb(78, 117, 255);
+  color: #fff;
+}
+
+.btn-timer:enabled:hover {
+  background: rgb(125, 151, 245);
+  color: #fff;
 }
 
 .field {

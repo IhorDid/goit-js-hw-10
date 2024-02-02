@@ -1,6 +1,9 @@
 import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
 
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
+
 const dateTimePicker = document.querySelector('#datetime-picker');
 const startButton = document.querySelector('[data-start]');
 const daysElement = document.querySelector('[data-days]');
@@ -27,7 +30,13 @@ flatpickr(dateTimePicker, {
       startButton.disabled = false;
     } else {
       startButton.disabled = true;
-      window.alert('Please choose a date in the future');
+      iziToast.show({
+        title: 'Error',
+        message: 'Please choose a date in the future',
+        position: 'topCenter',
+        backgroundColor: '#ff4d4d',
+        iconColor: '#ffffff',
+      });
     }
   },
 });
@@ -39,6 +48,7 @@ startButton.addEventListener('click', function () {
     dateTimePicker.disabled = true;
   }
 });
+
 function startTimer() {
   countdownInterval = setInterval(updateTimer, 1000);
 }
@@ -61,19 +71,16 @@ function updateTimer() {
 function addLeadingZero(value) {
   return String(value).padStart(2, '0');
 }
+
 function convertMs(difference) {
   const second = 1000;
   const minute = second * 60;
   const hour = minute * 60;
   const day = hour * 24;
 
-  // Remaining days
   const days = Math.floor(difference / day);
-  // Remaining hours
   const hours = Math.floor((difference % day) / hour);
-  // Remaining minutes
   const minutes = Math.floor(((difference % day) % hour) / minute);
-  // Remaining seconds
   const seconds = Math.floor((((difference % day) % hour) % minute) / second);
 
   return { days, hours, minutes, seconds };
