@@ -23,6 +23,7 @@ form.addEventListener('submit', event => {
       }
     }, delay);
   });
+  form.reset();
   promise
     .then(delay => {
       iziToast.show({
@@ -32,7 +33,6 @@ form.addEventListener('submit', event => {
         backgroundColor: '#59A10D',
         messageColor: '#fff',
       });
-      form.reset();
     })
     .catch(delay => {
       iziToast.show({
@@ -43,6 +43,5 @@ form.addEventListener('submit', event => {
         backgroundColor: '#EF4040',
         messageColor: '#fff',
       });
-      form.reset();
     });
 });
